@@ -2,6 +2,7 @@
 Pylint's ChangeLog
 ------------------
 
+
 What's New in Pylint 2.5.4?
 ===========================
 
@@ -10,6 +11,10 @@ Release date: TBA
 * Fix a crash caused by not guarding against `InferenceError` when calling `infer_call_result`
 
   Close #3690
+
+* Fix a crash in parallel mode when the module's filepath is not set
+
+  Close #3564
 
 
 What's New in Pylint 2.5.3?

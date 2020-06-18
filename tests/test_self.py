@@ -783,3 +783,11 @@ class TestRunTC:
         path = join(HERE, "regrtest_data", "unused_variable.py")
         expected = "Your code has been rated at 7.50/10"
         self._test_output([path, "--jobs=2", "-ry"], expected_output=expected)
+
+    def test_regression_parallel_mode_without_filepath(self):
+        # Test that parallel mode properly passes filepath
+        # https://github.com/PyCQA/pylint/issues/3564
+        path = join(
+            HERE, "regrtest_data", "regression_missing_init_3564", "subdirectory/"
+        )
+        self._test_output([path, "-j2"], expected_output="No such file or directory")
