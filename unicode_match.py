@@ -1,10 +1,14 @@
-# coding=utf8
 import sys
 import unicodedata
 
 
 def chars_from_category(category):
-    return ''.join([chr(num) for num in range(sys.maxunicode+1) if unicodedata.category(chr(num)) == category])
+    return "".join(
+        chr(num)
+        for num in range(sys.maxunicode + 1)
+        if unicodedata.category(chr(num)) == category
+    )
+
 
 categories = ["Lu", "Ll", "Lt", "Lm", "Nl"]
 for category in categories:
